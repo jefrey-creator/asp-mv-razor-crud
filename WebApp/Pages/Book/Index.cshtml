@@ -1,0 +1,40 @@
+﻿@page
+@model WebApp.Pages.Book.IndexModel
+@{
+	ViewData["Title"] = "Books";
+}
+
+<h1> Books List</h1>
+<a class="btn btn-success float-end mb-3" asp-page="Create">Create</a>
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Book Title</th>
+			<th>Book Description</th>
+			<th>Book Author</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach(var books in Model.Books){
+			<tr>
+				<td>
+					@Html.DisplayFor(model => books.BookTitle)
+				</td>
+				<td>
+					@Html.DisplayFor(model => books.BookDescription)
+				</td>
+				<td>
+					@Html.DisplayFor(model => books.BookAuthor)
+				</td>
+				<td>
+					<div class="gap-2">
+						<a class="btn btn-primary" asp-page="./Edit" asp-route-id="@books.BookId">Edit</a>
+						<a class="btn btn-success" asp-page="./Detail" asp-route-id="@books.BookId">Details</a>
+						<a class="btn btn-danger" asp-page="./Delete" asp-route-id="@books.BookId">Delete</a>
+					</div>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
