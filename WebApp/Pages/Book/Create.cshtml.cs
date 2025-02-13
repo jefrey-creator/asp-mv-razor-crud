@@ -31,7 +31,7 @@ namespace WebApp.Pages.Book
 
             context.Books.Add(Books);
             await context.SaveChangesAsync();
-
+            TempData["Message"] = $"{Books.BookTitle} added successfully.";
             return RedirectToPage("./Index");
         }
     }

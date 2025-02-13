@@ -52,7 +52,7 @@ namespace WebApp.Pages.Book
                 Books = books;
                 context.Books.Remove(Books);
                 await context.SaveChangesAsync();
-
+                TempData["Message"] = $"{Books.BookTitle} deleted successfully.";
                 return RedirectToPage("./Index");
             }
         }

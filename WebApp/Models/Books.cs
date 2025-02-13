@@ -6,7 +6,7 @@ namespace WebApp.Models
     {
         [Key]
         public int BookId { get; set; }
-        [Required]
+        [Required, MaxLength(50)]
         public string BookTitle { get; set; } = string.Empty;
         [Required]
         public string BookDescription { get; set; } = string.Empty;

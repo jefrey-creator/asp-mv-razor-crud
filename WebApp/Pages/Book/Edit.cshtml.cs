@@ -45,7 +45,7 @@ namespace WebApp.Pages.Book
 
             context.Books.Update(Books);
             await context.SaveChangesAsync();
-            
+            TempData["Message"] = $"{Books.BookTitle} updated successfully.";
             return RedirectToPage("./Index");
         }
 

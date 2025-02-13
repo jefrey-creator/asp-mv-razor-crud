@@ -6,6 +6,11 @@
 
 <h1> Books List</h1>
 <a class="btn btn-success float-end mb-3" asp-page="Create">Create</a>
+@if(TempData["Message"] != null){
+	<div class="alert alert-success">
+		@TempData["Message"]
+	</div>
+}
 <table class="table table-bordered">
 	<thead>
 		<tr>
